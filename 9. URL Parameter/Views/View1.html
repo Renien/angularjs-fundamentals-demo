@@ -1,0 +1,11 @@
+<div class="container">
+    View 1
+    Name : <input type="text" data-ng-model="name"/>
+    <br>
+    {{name}}
+    <br>
+    <ul>
+        <li data-ng-repeat="person in persons  | filter:name">{{person.name}} {{person.phone}}</li>
+    </ul>
+    <a href="#/user/Malinda">Next Route</a>
+</div>

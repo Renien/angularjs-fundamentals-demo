@@ -1,0 +1,22 @@
+<div class="container">
+    View 1
+    Name : <input type="text" data-ng-model="name"/>
+    <br>
+    {{name}}
+    <br>
+    <ul>
+        <li data-ng-repeat="person in persons  | filter:name">{{person.name}} {{person.phone}}</li>
+    </ul>
+
+    <br>
+    Name :
+    <br>
+    <input type="text" data-ng-model="new.name"/>
+
+    <br>
+    Phone :
+    <br>
+    <input type="text" data-ng-model="new.phone"/>
+    <br>
+    <button data-ng-click="addNew()">Add New</button>
+</div>

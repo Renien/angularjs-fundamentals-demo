@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+</head>
+<body data-ng-init="names=['Malinda','Chathura','Renien']">
+<div class="container">
+    Name : <input type="text" ng-model="name"/>
+    <br>
+    {{name}}
+    <br>
+    <ul>
+        <li data-ng-repeat="currentName in names">{{currentName}}</li>
+    </ul>
+</div>
+
+</body>
+<script src="../AngularJS/angular.js"></script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html data-ng-app="myModule">
+<head>
+    <title></title>
+</head>
+<body>
+
+<body>
+<div data-ng-view="">
+
+</div>
+</body>
+<script src="../AngularJS/angular.js"></script>
+<script src="../AngularJS/angular-route.js"></script>
+
+<script>
+
+    var myApp = angular.module('myModule', ['ngRoute']);
+    myApp.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+                .when("/", {
+                    controller: 'simpleController',
+                    templateUrl: 'Views/View1.html'
+                })
+                .when("/route2", {
+                    controller: 'simpleController',
+                    templateUrl: 'Views/View2.html'
+                })
+                .otherwise({
+                    redirectTo: "/"
+                })
+    }])
+
+    myApp.controller('simpleController', function ($scope) {
+        $scope.persons = [
+            {name: 'Malinda', phone: '0771122113'},
+            {name: 'Chathura', phone: '071'},
+            {name: 'Renien', phone: ''}
+        ];
+
+        $scope.addNew = function () {
+            $scope.persons.push({
+                name: $scope.new.name, phone: $scope.new.phone
+            })
+        }
+
+    });
+
+
+</script>
+</html>
